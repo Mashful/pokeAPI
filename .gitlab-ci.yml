@@ -1,0 +1,8 @@
+stages:
+  - test
+
+api_test:
+  stage: test
+  image: postman/newman:alpine
+  script:
+    - newman run "POKEAPI.postman_collection.json" --env-var "pokemon_url=https://pokeapi.co/api/v2/pokemon/ditto"
